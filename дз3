@@ -1,0 +1,24 @@
+class Person:
+    def __init__(self, name, age):
+        self.name = name  
+        self.age = age    
+    def get_age(self):
+        """Метод, що повертає вік особи."""
+        return self.age
+    def display_info(self):
+        """Виводить інформацію про особу."""
+        print(f"Ім'я: {self.name}")
+        print(f"Вік: {self.age} років")
+class Driver(Person):
+    def __init__(self, name, age, license_number):
+        super().__init__(name, age) 
+        self.license_number = license_number  
+    def display_info(self):
+        """Виводить інформацію про водія, включаючи номер посвідчення."""
+        super().display_info()  
+        print(f"Номер водійського посвідчення: {self.license_number}")
+person = Person("Марія", 28)
+person.display_info()
+print() 
+driver = Driver("Іван", 30,  "123456")
+driver.display_info()
